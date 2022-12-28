@@ -1,9 +1,9 @@
-package com.example.board.service;
+package com.example.blog.service;
 
-import com.example.board.domain.Board;
-import com.example.board.dto.request.SaveBoardRequest;
-import com.example.board.dto.response.SaveBoardResponse;
-import com.example.board.repository.BoardRepository;
+import com.example.blog.domain.Board;
+import com.example.blog.dto.request.SaveBoardRequest;
+import com.example.blog.dto.response.SaveBoardResponse;
+import com.example.blog.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

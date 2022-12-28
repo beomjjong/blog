@@ -1,11 +1,9 @@
-package com.example.board.controller;
+package com.example.blog.controller;
 
 
-import com.example.blog.dto.request.SaveUserRequest;
-import com.example.blog.dto.response.SaveUserResponse;
-import com.example.board.dto.request.SaveBoardRequest;
-import com.example.board.dto.response.SaveBoardResponse;
-import com.example.board.service.BoardService;
+import com.example.blog.dto.request.SaveBoardRequest;
+import com.example.blog.dto.response.SaveBoardResponse;
+import com.example.blog.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +25,6 @@ public class BoardController {
     public ResponseEntity<SaveBoardResponse> save(@RequestBody @Valid SaveBoardRequest saveBoardRequest) {
         SaveBoardResponse saveBoardResponse = boardService.save(saveBoardRequest);
         return new ResponseEntity<>(saveBoardResponse, HttpStatus.CREATED);
-
     }
 
 

@@ -2,9 +2,11 @@ package com.example.blog.service;
 
 import com.example.blog.domain.User;
 import com.example.blog.domain.UserRole;
+import com.example.blog.dto.request.LoginUserRequest;
 import com.example.blog.dto.request.SaveUserRequest;
 import com.example.blog.dto.request.UpdateUserRequest;
 import com.example.blog.dto.response.DeleteUserResponse;
+import com.example.blog.dto.response.LoginUserResponse;
 import com.example.blog.dto.response.SaveUserResponse;
 import com.example.blog.dto.response.UpdateUserResponse;
 import com.example.blog.repository.UserRepository;
@@ -87,15 +89,15 @@ public class UserServiceImpl implements UserService{
     }
 
 
-//    public String login(String userId, String password) {
-//        User user = userRepository.findByUserId(userId).orElseThrow(() -> new IllegalArgumentException("아이디 또는 비밀번호를 확인해주세요."));
-//
-//        if (BCrypt.checkpw(password, user.getUserPwd())) {
-//            return "OK";
-//        }
-//
-//        return "Fail";
-//    }
+    public LoginUserResponse login(LoginUserRequest loginUserRequest) {
+        User user = userRepository.findByUserId(loginUserRequest.getUserId()).orElseThrow(() -> new IllegalArgumentException("아이디 또는 비밀번호를 확인해주세요."));
+
+        if (!BCrypt.checkpw(loginUserRequest.getPassword(), user.getUserPwd())) {
+            throw new IllegalArgumentException("아이디 또는 비밀번호를 확인해주세요.");
+        }
+
+        return new LoginUserResponse(user);
+    }
 }
 
 

@@ -1,19 +1,16 @@
 package com.example.blog.domain;
 
 
-import com.example.board.domain.BaseTimeEntity;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 
 
-
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-
 @Entity
 public class User extends BaseTimeEntity {
 

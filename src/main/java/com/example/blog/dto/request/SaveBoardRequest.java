@@ -1,8 +1,8 @@
-package com.example.board.dto.request;
+package com.example.blog.dto.request;
 
 
 import com.example.blog.domain.User;
-import com.example.board.domain.Board;
+import com.example.blog.domain.Board;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

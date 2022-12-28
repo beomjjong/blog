@@ -1,7 +1,7 @@
-package com.example.board.service;
+package com.example.blog.service;
 
-import com.example.board.dto.request.SaveBoardRequest;
-import com.example.board.dto.response.SaveBoardResponse;
+import com.example.blog.dto.request.SaveBoardRequest;
+import com.example.blog.dto.response.SaveBoardResponse;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface BoardService {

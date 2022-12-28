@@ -1,4 +1,4 @@
-package com.example.board.domain;
+package com.example.blog.domain;
 
 
 import lombok.Getter;

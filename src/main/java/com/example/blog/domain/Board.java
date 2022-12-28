@@ -1,22 +1,18 @@
-package com.example.board.domain;
+package com.example.blog.domain;
 
-import com.example.blog.domain.User;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 
-@Builder
-@AllArgsConstructor
+
 @Getter
 @NoArgsConstructor
 @Entity
-public class Board extends BaseTimeEntity{
+public class Board extends BaseTimeEntity {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Id
     private Long id;
 
@@ -31,5 +27,13 @@ public class Board extends BaseTimeEntity{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userNo")
     private User user;
+
+    @Builder
+    public Board(String title, String content, int count, User user) {
+        this.title = title;
+        this.content = content;
+        this.count = count;
+        this.user = user;
+    }
 }
 

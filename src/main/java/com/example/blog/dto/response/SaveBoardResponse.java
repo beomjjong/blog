@@ -1,6 +1,6 @@
-package com.example.board.dto.response;
+package com.example.blog.dto.response;
 
-import com.example.board.domain.Board;
+import com.example.blog.domain.Board;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

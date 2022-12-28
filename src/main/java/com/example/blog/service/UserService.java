@@ -1,9 +1,11 @@
 package com.example.blog.service;
 
 
+import com.example.blog.dto.request.LoginUserRequest;
 import com.example.blog.dto.request.SaveUserRequest;
 import com.example.blog.dto.request.UpdateUserRequest;
 import com.example.blog.dto.response.DeleteUserResponse;
+import com.example.blog.dto.response.LoginUserResponse;
 import com.example.blog.dto.response.SaveUserResponse;
 import com.example.blog.dto.response.UpdateUserResponse;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +27,6 @@ public interface UserService {
 
     SaveUserResponse getUser(Long userNo);
 
-//    String login(String userId, String password);
+    LoginUserResponse login(LoginUserRequest loginUserRequest);
 }
 
